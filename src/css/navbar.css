@@ -1,0 +1,198 @@
+.navbar {
+    position: fixed;
+    background-color: #0D141C;
+    width: 100vw;
+    height: 10rem;
+    z-index: 999;
+    
+    display: grid; 
+    align-items: center;
+    grid-template-columns: 1.5fr 5fr 1.5fr; 
+    grid-template-rows: 9fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas:
+        "logo logo logo"
+        "menu search logout";
+}
+
+.logo {
+    width: 100vw;
+    padding: 1rem 0;
+    text-align: center;
+    grid-area: logo;
+}
+
+.burger-label {
+    /* position: absolute; */
+    bottom: .3rem;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    grid-area: menu;
+}
+
+.burger-label::before {
+    content: "";
+    grid-area: menu;
+    background-color: darkgray;
+    width: 2rem;
+    height: .2rem;
+    position: absolute;
+    left: .5rem;
+    top: .5rem;
+    box-shadow: 0 .45rem 0 0 darkgray, 0 .9rem 0 0 darkgray;
+}
+
+/* Menú Cerrado */
+.navbar > .navbar-list {
+    display: none;
+}
+
+#burger-checkbox {
+    display: none;
+}
+
+/* Menú Abierto */
+#burger-checkbox:checked ~ .navbar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 10rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #0D141C;
+    height: calc(100vh - 10rem);
+    width: 100vw;
+    opacity: .85;
+}
+
+.navbar-item a {
+    color: azure;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.search {
+    grid-area: search;
+    justify-self: center;
+}
+
+.search input {
+    border-radius: .5rem;
+    border: transparent;
+    padding: .5rem 1rem .5rem 2rem;
+    outline: none;
+    margin-right: 0;
+    margin-bottom: .5rem;
+
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 24px;
+    background-color: #F0C514;
+    color: #0D141C;
+}
+
+.logout {
+    grid-area: logout;
+    display: block;
+    justify-items: center;
+}
+
+.ico-logout {
+    width: 100%;
+    height: 1rem;
+}
+
+.logout a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: .7rem;
+    color: #F0C514;
+    padding: 0 .3rem .3rem 0;
+}
+
+@media all and (min-width: 768px) {
+    
+    .navbar {
+        justify-content: center;
+        grid-template-areas:
+            "logo logo logo"
+            "search menu logout";
+
+    }
+
+    .burger-label, .burger-label::before {
+        display: none;
+    }
+
+    .logo {
+        margin-left: 1rem;
+        margin-right: 4rem;
+    }
+
+    .navbar > .navbar-list {
+        grid-area: menu;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: center;
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar > .navbar-list .navbar-item {
+        margin: 0;
+    }
+
+    .navbar-item a {
+        color: #fff;
+        font-size: 1rem;
+        text-decoration: none;
+        padding: 1rem 1rem;
+    }
+
+    .navbar-item a:hover {
+        color: #F0C514;
+    }
+
+    .search {
+        position: relative;
+        left: 15%;
+        width: 100%;
+        justify-self: right;
+        text-align: center;
+    }
+
+    .search > input {
+        width: 10rem;
+        padding-left: 2rem;
+    }
+
+    .logout {
+        grid-area: logout;
+    }
+
+    .logout a {
+        color: #F0C514;
+        text-decoration: none;
+        padding-right: 2rem;
+        padding-left: 3rem;
+    }
+
+    .logout a:hover {
+        color: #31607b;
+    }
+
+    .logout > a:hover img {
+    fill: #0D141C;
+}
+
+}

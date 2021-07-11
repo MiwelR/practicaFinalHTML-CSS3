@@ -1,0 +1,78 @@
+.header ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none inside;
+}
+
+.slider-container {
+    position: relative;
+    background-color: #0D141C;
+    width: 100%;
+}
+
+.slider-container img {
+    width: 100%;
+    z-index: -1;
+}
+
+ul.slider {
+    position: relative;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+
+ul.slider li {
+    opacity: 0;
+    transition: opacity .5s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: #0D141C;
+    height: 100%;
+}
+
+ul.slider > li > img {
+    width: 100%;
+}
+
+ul.slider li:first-child {
+    opacity: 1;
+}
+
+ul.slider li:target {
+    opacity: 1;
+}
+
+.slider-menu {
+    position:relative;
+    width: 100%;
+}
+
+.slider-menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #0D141C;
+}
+
+.slider-menu-list > li > a {
+    background-color: #F0C514;
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: bold;
+    color: #000;
+    padding: .3rem;
+    margin-bottom: .3rem;
+    border-radius: 15%;
+}
+
+
+@media all and (min-width: 768px) {
+
+    .slider-menu-list > li > a:hover {
+        color: #F0C514;
+        background-color: #000;
+    }
+
+}

@@ -1,0 +1,148 @@
+h2 {
+    text-align: center;
+    margin-top: 4.5rem;
+    margin-bottom: 2rem;
+}
+
+.sections {
+    display: block;
+}
+
+.contain {
+    margin-bottom: 2rem;
+    display: grid;
+    justify-content: center;
+}
+
+/* Configuración de la tarjeta */
+.card {
+    position: relative;
+}
+
+.card-img {
+    background-color: transparent;
+    height: 100%;
+}
+
+.card-img img {
+    width: 300px;
+    height: 100%;
+}
+
+.card-text {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    font-size: x-small;
+    background-color: rgba(0, 0, 0, 0.75);
+
+    display: none;
+}
+
+.card:hover .card-text {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: repeat(6, .5fr);
+    grid-template-areas:
+        "title year"
+        "argument year"
+        "argument rate"
+        "argument rate"
+        "argument like"
+        "argument like";
+}
+
+.card-title {
+    grid-area: title;
+    text-align: center;
+}
+
+.card-year {
+    grid-area: year;
+    padding: .5rem;
+    text-align: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.card-argument {
+    grid-area: argument;
+    padding: 0 .5rem;
+}
+
+.card-argument p {
+    margin: 0;
+    padding: 0;
+}
+
+.card-rate {
+    grid-area: rate;
+    padding: 0 .5rem;
+    text-align: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.card-like {
+    grid-area: like;
+    padding: 0.5rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+/* Título del contenido */
+.title-link {
+    display: flex;
+    justify-content: space-around;
+    padding-top: .5rem;
+}
+
+.title {
+    text-decoration: none;
+    color: #F0C514;
+}
+
+.title:hover {
+    color: #fff;
+}
+
+/* Botón Like */
+.like-button {
+    background: url("../img/ico-like.svg") no-repeat center;
+    width: 1.5rem;
+}
+
+.title-link > input[type="checkbox"] {
+    display: none;
+}
+
+.title-link > input[type="checkbox"]:checked ~ .like-button {
+    background: url("../img/ico-like-checked.svg") no-repeat center;
+}
+
+@media all and (min-width: 768px) {
+
+    .sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+}
+
+@media all and (min-width: 1200px) {
+
+    .sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10%;
+    width: 100%;
+}
+
+}
+
+/* #like {
+    display: none;
+}
+
+#like1:checked ~ .like-button {
+    background: url(../);
+} */

@@ -1,0 +1,122 @@
+.ficha {
+    width: 100%;
+    padding: 0 3rem;
+    margin-top: 2rem;
+}
+
+main > h2 {
+    margin-bottom: 2rem;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.details > h2 {
+    color: #F0C514;
+    margin-top: 5rem;
+}
+
+.details > .info {
+    text-align: center;
+    font-size: .9rem;
+}
+
+.details > video {
+    width: 100%;
+}
+
+.actors-container {
+    width: 100%;
+}
+
+.actors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.actors > .actor {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    margin-bottom: 2.5rem;
+}
+
+.actors > .actor > h4 {
+    position: relative;
+    text-align: center;
+    font-size: .8rem;
+    top: 4rem;
+}
+
+.actors > .one {
+    background-image: url("../img/thumbnails/actors-vin-diesel.jpg");
+}
+
+.actors > .two {
+    background-image: url("../img/thumbnails/actors-michelle-rodriguez.jpg");
+}
+
+.actors > .three {
+    background-image: url("../img/thumbnails/actors-jordana-brewster.jpg");
+}
+
+.actors > .four {
+    background-image: url("../img/thumbnails/actors-tyrese-gibson.jpg");
+}
+
+.actors > .five {
+    background-image: url("../img/thumbnails/actors-ludacris.jpg");
+}
+
+@media all and (min-width: 768px) {
+
+    .details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5%;
+        justify-content: center;
+        /* grid-template-rows: 10rem min-content repeat(2, auto); */
+        grid-template-areas:
+            "title title"
+            "info info"
+            "trailer sinopsis"
+            "actors actors";
+    }
+
+    .details h2 {
+        grid-area: title;
+    }
+
+    .details .info {
+        grid-area: info;
+    }
+
+    .details video {
+        grid-area: trailer;
+        align-self: center;
+    }
+
+    .details p.sinopsis {
+        grid-area: sinopsis;
+    }
+
+    .details .actors-container {
+        grid-area: actors;
+    }
+
+    main > h2 {
+        margin-top: 10rem;
+    }
+
+}
